@@ -1,5 +1,16 @@
 # Qemetica-Internship
+![MIT License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge&logo=mit&logoColor=black)
+![Views](https://komarev.com/ghpvc/?username=DEV-industry&repo=Qemetica-Internship&label=Views&style=for-the-badge)
+
 # Android Kiosk Launcher
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
+![Android Studio](https://img.shields.io/badge/android%20studio-346ac1?style=for-the-badge&logo=android%20studio&logoColor=white)
+![Android](https://img.shields.io/badge/Android-%2323CF5F?style=for-the-badge&logo=android&logoColor=white)
+![Release](https://img.shields.io/badge/Release-v1.0-blue?style=for-the-badge)
+![Kiosk Mode](https://img.shields.io/badge/Kiosk-Mode-purple?style=for-the-badge)
+
+
+
 
 A lightweight **Kiosk Mode app launcher** for Android 8.0+, written in **Java**.  
 The app allows locking a selected application in fullscreen kiosk mode with auto-launch on boot and a hidden exit option.  
