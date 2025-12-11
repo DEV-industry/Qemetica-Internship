@@ -9,6 +9,9 @@
 ![Release](https://img.shields.io/badge/Release-v1.0-blue?style=for-the-badge)
 ![Kiosk Mode](https://img.shields.io/badge/Kiosk-Mode-purple?style=for-the-badge)
 
+<div align="center">
+<img src="qemetica.jpg" alt="Podglad irl" width="400">
+</div>
 
 
 
