@@ -28,7 +28,7 @@ public class MyAccessibilityService extends AccessibilityService {
     private Runnable autoClickRunnable;
     private boolean isAutoClicking = false;
 
-    // 🔹 do obsługi 20 klików w róg
+    
     private View exitTouchView;
     private int cornerClickCount = 0;
     private long lastClickTime = 0;
@@ -46,11 +46,11 @@ public class MyAccessibilityService extends AccessibilityService {
         super.onServiceConnected();
         MainActivity.accessibilityService = this;
 
-        addExitOverlay();   // 🔹 dodajemy ukryty róg
-        startAutoClick();   // 🔹 start autoklika
+        addExitOverlay();   
+        startAutoClick();   
     }
 
-    // 🔹 Funkcja klikająca w punkt
+   
     public void clickAt(int x, int y) {
         Path path = new Path();
         path.moveTo(x, y);
@@ -96,12 +96,12 @@ public class MyAccessibilityService extends AccessibilityService {
         String pkg = getForegroundApp();
         if (pkg == null) return false;
 
-        // 🔹 Zakaz tylko dla Chrome
+        
         return !pkg.equals("com.android.chrome");
     }
 
 
-    // 🔹 Start auto-klikania co 1 sekundę
+    
     public void startAutoClick() {
         if (isAutoClicking) return;
 
@@ -127,7 +127,7 @@ public class MyAccessibilityService extends AccessibilityService {
         isAutoClicking = true;
     }
 
-    // 🔹 Stop auto-klikania
+    
     public void stopAutoClick() {
         if (handler != null && autoClickRunnable != null) {
             handler.removeCallbacks(autoClickRunnable);
@@ -135,13 +135,13 @@ public class MyAccessibilityService extends AccessibilityService {
         isAutoClicking = false;
     }
 
-    // 🔹 Dodanie niewidzialnego pola w rogu
+    
     @SuppressLint("ClickableViewAccessibility")
     private void addExitOverlay() {
         WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
 
         WindowManager.LayoutParams params = new WindowManager.LayoutParams(
-                200, 200, // rozmiar rogu w px
+                200, 200, 
                 WindowManager.LayoutParams.TYPE_ACCESSIBILITY_OVERLAY,
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
                         | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
@@ -149,16 +149,16 @@ public class MyAccessibilityService extends AccessibilityService {
                 PixelFormat.TRANSLUCENT
         );
 
-        params.gravity = Gravity.BOTTOM | Gravity.LEFT; // lewy dolny róg
+        params.gravity = Gravity.BOTTOM | Gravity.LEFT; 
 
         exitTouchView = new View(this);
-        exitTouchView.setBackgroundColor(Color.TRANSPARENT); // niewidzialny
+        exitTouchView.setBackgroundColor(Color.TRANSPARENT); 
 
         exitTouchView.setOnTouchListener((v, event) -> {
             if (event.getAction() == MotionEvent.ACTION_DOWN) {
                 long now = System.currentTimeMillis();
 
-                // reset licznika po 3s bez klikania
+               
                 if (now - lastClickTime > 3000) {
                     cornerClickCount = 0;
                 }
